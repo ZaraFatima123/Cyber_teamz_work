@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { FaUserCircle } from "react-icons/fa";
 
-export default function Navbar() {
-  const [darkMode, setDarkMode] = useState(false);
-  const [email, setEmail] = useState("");
+const Navbar = () => {
+  const [darkMode, setDarkMode] = React.useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -11,135 +11,133 @@ export default function Navbar() {
     document.body.style.color = !darkMode ? "#ffffff" : "#000000";
   };
 
-  const checkPwned = async () => {
-    if (!email) return alert("Please enter an email.");
-    const apiUrl = `https://haveibeenpwned.com/api/v3/breachedaccount/${email}`;
-    const headers = {
-      "User-Agent": "PhishingDetect",
-      "hibp-api-key": "YOUR_API_KEY",
-    };
-
-    try {
-      const response = await fetch(apiUrl, { headers });
-      if (response.ok) {
-        const data = await response.json();
-        alert(
-          `Your email has been found in the following breaches: ${data
-            .map((breach) => breach.Name)
-            .join(", ")}`
-        );
-      } else {
-        alert("No breaches found for this email.");
-      }
-    } catch (error) {
-      console.error("Error checking email:", error);
-      alert("Error checking email.");
-    }
-  };
-
   return (
-    <div>
-      <nav
-        className={`navbar navbar-expand-lg ${
-          darkMode ? "navbar-dark bg-dark" : "navbar-light bg-light"
-        }`}
-      >
-        <div className="container-fluid">
-          <a
-            className="navbar-brand"
-            href="#"
-            style={{ color: darkMode ? "white" : "black" }}
-          >
-            Phishing Detect
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNav"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarNav">
-            <ul className="navbar-nav ms-auto">
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  to="/"
-                  style={{ color: darkMode ? "white" : "black" }}
-                >
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  to="/analytics"
-                  style={{ color: darkMode ? "white" : "black" }}
-                >
-                  Analytics
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  to="/smartcheck"
-                  style={{ color: darkMode ? "white" : "black" }}
-                >
-                  Smart Check
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  to="/login"
-                  style={{ color: darkMode ? "white" : "black" }}
-                >
+    <nav
+      className={`navbar navbar-expand-lg ${
+        darkMode ? "navbar-dark bg-dark" : "navbar-light bg-light"
+      }`}
+    >
+      <div className="container-fluid">
+        <Link className="navbar-brand" to="/">
+          Phishing Detect
+        </Link>
+
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <Link className="nav-link" to="/">
+                Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/analytics">
+                Analytics
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/smartcheck">
+                Smart Check
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/security-campaign">
+                Security Campaign
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/am-i-pawned">
+                Am I Pwned?
+              </Link>
+            </li>
+          </ul>
+
+          <div className="dropdown ms-3">
+            <button
+              className="btn btn-outline-secondary dropdown-toggle"
+              type="button"
+              id="accountDropdown"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              <FaUserCircle size={24} />
+            </button>
+            <ul
+              className="dropdown-menu dropdown-menu-end"
+              aria-labelledby="accountDropdown"
+            >
+              <li>
+                <Link className="dropdown-item" to="/login">
                   Login
                 </Link>
               </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  to="/security-campaign"
-                  style={{ color: darkMode ? "white" : "black" }}
+              <li>
+                <button
+                  className="dropdown-item"
+                  data-bs-toggle="modal"
+                  data-bs-target="#settingsModal"
                 >
-                  Security Campaign
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  className="nav-link"
-                  to="/am-i-pawned"
-                  style={{ color: darkMode ? "white" : "black" }}
-                >
-                  Am I pawned
-                </Link>
+                  Settings
+                </button>
               </li>
             </ul>
-            <div className="form-check form-switch my-3">
-              <input
-                className="form-check-input"
-                type="checkbox"
-                role="switch"
-                id="darkModeSwitch"
-                onClick={toggleDarkMode}
-              />
-              <label
-                className={`form-check-label ${
-                  darkMode ? "text-light" : "text-dark"
-                }`}
-                htmlFor="darkModeSwitch"
-                style={{ color: darkMode ? "yellow" : "black" }}
-              >
-                {darkMode ? "Light Mode" : "Dark Mode"}
-              </label>
+          </div>
+        </div>
+      </div>
+
+      <div
+        className="modal fade"
+        id="settingsModal"
+        tabIndex="-1"
+        aria-labelledby="settingsModalLabel"
+        aria-hidden="true"
+      >
+        <div className="modal-dialog">
+          <div
+            className={`modal-content p-3 ${
+              darkMode ? "bg-dark text-white" : "bg-light text-dark"
+            }`}
+          >
+            <div className="modal-header">
+              <h5 className="modal-title" id="settingsModalLabel">
+                Settings
+              </h5>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="modal-body d-flex flex-column gap-3">
+              <div className="form-check form-switch">
+                <input
+                  className="form-check-input"
+                  type="checkbox"
+                  id="darkModeSwitch"
+                  onChange={toggleDarkMode}
+                  checked={darkMode}
+                />
+                <label className="form-check-label" htmlFor="darkModeSwitch">
+                  {darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+                </label>
+              </div>
             </div>
           </div>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
   );
-}
+};
+
+export default Navbar;

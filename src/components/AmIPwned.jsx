@@ -15,7 +15,7 @@ const AmIPwned = () => {
     const apiUrl = `https://haveibeenpwned.com/api/v3/breachedaccount/${email}`;
     const headers = {
       "User-Agent": "PhishingDetect",
-      "hibp-api-key": "YOUR_API_KEY_HERE", 
+      "hibp-api-key": "xxx", 
     };
 
     try {
@@ -43,26 +43,28 @@ const AmIPwned = () => {
   };
 
   return (
-    <div className="container mt-4">
-      <h3>Check If Your Email Has Been Pwned</h3>
-      <div className="input-group mb-3">
-        <input
-          type="email"
-          className="form-control"
-          placeholder="Enter your email..."
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <button className="btn btn-primary" onClick={checkPwned}>
-          Check Email
-        </button>
-      </div>
-      {pwnedMessage && (
-        <div className={`alert ${isPwned ? "alert-danger" : "alert-success"}`}>
-          {pwnedMessage}
+      <div className="container mt-4">
+        <h3>Check If Your Email Has Been Pwned</h3>
+        <div className="input-group mb-3">
+          <input
+            type="email"
+            className="form-control"
+            placeholder="Enter your email..."
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <button className="btn btn-primary" onClick={checkPwned}>
+            Check Email
+          </button>
         </div>
-      )}
-    </div>
+        {pwnedMessage && (
+          <div
+            className={`alert ${isPwned ? "alert-danger" : "alert-success"}`}
+          >
+            {pwnedMessage}
+          </div>
+        )}
+      </div>
   );
 };
 

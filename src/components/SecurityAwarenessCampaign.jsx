@@ -78,7 +78,7 @@ const SecurityAwarenessCampaign = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </div> 
   );
 };
 
