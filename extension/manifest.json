@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Phishing url checker",
+  "version": "1.0",
+  "description": "Checks Visited url and warns if they are suspicious",
+  "permissions": ["tabs", "webNavigation", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js",
+    "tyoe": "module"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
