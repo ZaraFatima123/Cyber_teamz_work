@@ -1,19 +1,71 @@
 import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { useNavigate } from "react-router-dom"; 
 
 const EducationalSection = () => {
+  const navigate = useNavigate();
+  const handleStartQuiz = () => {
+    navigate("/quiz"); 
+  };
+
   return (
     <div className="container mt-5">
-      <h2 className="text-center mb-4">
-        💡 Learn About Phishing and Stay Safe
-      </h2>
+      <div className="card p-4 shadow-lg mb-5" style={{ borderRadius: "15px" }}>
+        <h2
+          className="text-center mb-4"
+          style={{ fontFamily: "Arial, sans-serif" }}
+        >
+          💡 Learn About Phishing and Stay Safe
+        </h2>
+        <p className="text-center" style={{ fontSize: "1.1rem" }}>
+          Phishing is one of the most common forms of cybercrime, where
+          malicious actors attempt to steal sensitive information. This quiz
+          will test your knowledge on how to recognize phishing attempts and
+          protect yourself. Solving this quiz is an important step to stay
+          secure in today's digital world.
+        </p>
+      </div>
 
-      <div className="section">
-        <h3>Latest Phishing Techniques</h3>
+      <div
+        className="card p-4 shadow-lg mb-5"
+        style={{ borderRadius: "15px", background: "#f5f5f5" }}
+      >
+        <h3 className="text-center mb-3" style={{ fontWeight: "bold" }}>
+          Solve this Quiz to Learn More About Cybercrime!
+        </h3>
+        <p
+          className="text-center"
+          style={{ fontSize: "1.1rem", color: "#555" }}
+        >
+          Want to know how cybercriminals use phishing to steal your data? Take
+          the quiz to test your knowledge and learn the latest techniques to
+          stay safe from these threats. The more you know, the better prepared
+          you'll be!
+        </p>
+        <div className="d-flex justify-content-center mt-4">
+          <button
+            className="btn btn-lg btn-info shadow-lg rounded-pill px-5 py-3"
+            onClick={handleStartQuiz}
+            style={{
+              fontSize: "1.1rem",
+              fontWeight: "bold",
+              transition: "transform 0.3s ease, box-shadow 0.3s ease",
+            }}
+          >
+            Take the Quiz Now
+          </button>
+        </div>
+      </div>
+
+      <div className="card p-4 shadow-lg mb-4" style={{ borderRadius: "15px" }}>
+        <h3 className="text-center mb-3" style={{ fontWeight: "bold" }}>
+          Latest Phishing Techniques
+        </h3>
         <p>
           Phishing attacks are constantly evolving. Some of the latest phishing
           techniques include:
         </p>
-        <ul>
+        <ul style={{ fontSize: "1.1rem" }}>
           <li>
             <strong>Spearfishing:</strong> Targeting specific individuals or
             organizations using personalized information.
@@ -33,33 +85,14 @@ const EducationalSection = () => {
         </ul>
       </div>
 
-      <div className="section mt-4">
-        <h3>How to Recognize Phishing Attacks</h3>
-        <p>Here are some common signs of phishing emails or messages:</p>
-        <ul>
-          <li>
-            Suspicious or generic greetings, like "Dear user" instead of a
-            specific name.
-          </li>
-          <li>
-            Unexpected attachments or links. Always check the URL before
-            clicking.
-          </li>
-          <li>
-            Urgency or threats, such as "Immediate action required!" or "Your
-            account will be locked if you don’t respond."{" "}
-          </li>
-          <li>Misspellings or grammatical errors in the message content.</li>
-        </ul>
-      </div>
-
-      {/* Tips for Securing Personal Information */}
-      <div className="section mt-4">
-        <h3>Tips for Securing Your Personal Information</h3>
-        <ul>
+      <div className="card p-4 shadow-lg mb-4" style={{ borderRadius: "15px" }}>
+        <h3 className="text-center mb-3" style={{ fontWeight: "bold" }}>
+          Tips for Securing Your Personal Information
+        </h3>
+        <ul style={{ fontSize: "1.1rem" }}>
           <li>
             <strong>Use Two-Factor Authentication (2FA):</strong> Always enable
-            2FA for your accounts whenever possible.
+            2FA for your accounts.
           </li>
           <li>
             <strong>Regularly Update Passwords:</strong> Change passwords for
@@ -77,34 +110,37 @@ const EducationalSection = () => {
         </ul>
       </div>
 
-      {/* Educational Videos Section */}
-      <div className="section mt-4">
-        <h3>Educational Videos</h3>
-        <p>
-          Watch the following short videos to learn more about phishing attacks
-          and how to stay safe:
+      <div className="card p-4 shadow-lg mb-5" style={{ borderRadius: "15px" }}>
+        <h3 className="text-center mb-4" style={{ fontWeight: "bold" }}>
+          Educational Videos
+        </h3>
+        <p className="text-center" style={{ fontSize: "1.1rem" }}>
+          Watch these short videos to learn more about phishing attacks and how
+          to stay safe:
         </p>
-        <div className="videos">
-          <div className="video">
-            <h4>Phishing Awareness</h4>
+        <div className="row">
+          <div className="col-md-6 mb-3">
+            <h4 className="text-center">Phishing Awareness</h4>
             <iframe
-              width="560"
+              width="100%"
               height="315"
               src="https://www.youtube.com/embed/GZc-CpV5Z1k"
               title="Phishing Awareness"
               frameBorder="0"
               allowFullScreen
+              style={{ borderRadius: "10px" }}
             ></iframe>
           </div>
-          <div className="video mt-3">
-            <h4>How to Avoid Phishing Scams</h4>
+          <div className="col-md-6 mb-3">
+            <h4 className="text-center">How to Avoid Phishing Scams</h4>
             <iframe
-              width="560"
+              width="100%"
               height="315"
               src="https://www.youtube.com/embed/s8GfuRRi7GU"
               title="How to Avoid Phishing Scams"
               frameBorder="0"
               allowFullScreen
+              style={{ borderRadius: "10px" }}
             ></iframe>
           </div>
         </div>
