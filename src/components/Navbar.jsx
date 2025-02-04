@@ -1,15 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
-  const [darkMode, setDarkMode] = React.useState(false);
+  const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
-    document.body.style.backgroundColor = !darkMode ? "#121212" : "#ffffff";
-    document.body.style.color = !darkMode ? "#ffffff" : "#000000";
+    document.body.style.backgroundColor = darkMode ? "#ffffff" : "#121212";
+    document.body.style.color = darkMode ? "#000000" : "#ffffff";
   };
+
+  useEffect(() => {
+    window.googleTranslateElementInit = () => {
+      setTimeout(() => {
+        if (window.google && window.google.translate) {
+          new window.google.translate.TranslateElement(
+            {
+              pageLanguage: "en",
+              includedLanguages: "en,es,fr,de,it,hi",
+              layout:
+                window.google.translate.TranslateElement.InlineLayout.SIMPLE,
+            },
+            "google_translate_element"
+          );
+        }
+      }, 500);
+    };
+
+    const scriptId = "google-translate-script";
+    if (!document.getElementById(scriptId)) {
+      const script = document.createElement("script");
+      script.id = scriptId;
+      script.src =
+        "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+      script.async = true;
+      script.onerror = () =>
+        console.error("Google Translate script failed to load");
+      document.body.appendChild(script);
+    }
+
+    return () => {
+      const script = document.getElementById(scriptId);
+      if (script) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
 
   return (
     <nav
@@ -21,14 +58,11 @@ const Navbar = () => {
         <Link className="navbar-brand" to="/">
           Phishing Detect
         </Link>
-
         <button
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -61,40 +95,17 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
-
-          <div className="dropdown ms-3">
-            <button
-              className="btn btn-outline-secondary dropdown-toggle"
-              type="button"
-              id="accountDropdown"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              <FaUserCircle size={24} />
-            </button>
-            <ul
-              className="dropdown-menu dropdown-menu-end"
-              aria-labelledby="accountDropdown"
-            >
-              <li>
-                <Link className="dropdown-item" to="/login">
-                  Login
-                </Link>
-              </li>
-              <li>
-                <button
-                  className="dropdown-item"
-                  data-bs-toggle="modal"
-                  data-bs-target="#settingsModal"
-                >
-                  Settings
-                </button>
-              </li>
-            </ul>
-          </div>
+          <button
+            className="btn btn-outline-secondary ms-3"
+            data-bs-toggle="modal"
+            data-bs-target="#settingsModal"
+          >
+            <FaUserCircle size={24} />
+          </button>
         </div>
       </div>
 
+      {/* Settings Modal */}
       <div
         className="modal fade"
         id="settingsModal"
@@ -120,6 +131,7 @@ const Navbar = () => {
               ></button>
             </div>
             <div className="modal-body d-flex flex-column gap-3">
+              {/* Dark Mode Toggle */}
               <div className="form-check form-switch">
                 <input
                   className="form-check-input"
@@ -131,6 +143,39 @@ const Navbar = () => {
                 <label className="form-check-label" htmlFor="darkModeSwitch">
                   {darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
                 </label>
+              </div>
+
+              {/* Google Translate Widget Inside Settings */}
+              <div className="mt-3">
+                <h6>Language Preferences</h6>
+                <div id="google_translate_element"></div>
+              </div>
+
+              {/* Account Dropdown */}
+              <div className="dropdown">
+                <button
+                  className="btn btn-outline-secondary dropdown-toggle"
+                  type="button"
+                  id="accountDropdown"
+                  data-bs-toggle="dropdown"
+                >
+                  Account Options
+                </button>
+                <ul
+                  className="dropdown-menu dropdown-menu-end"
+                  aria-labelledby="accountDropdown"
+                >
+                  <li>
+                    <Link className="dropdown-item" to="/login">
+                      Login
+                    </Link>
+                  </li>
+                  <li>
+                    <button className="dropdown-item" data-bs-dismiss="modal">
+                      Close
+                    </button>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
