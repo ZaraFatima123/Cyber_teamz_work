@@ -1,13 +1,53 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* Adjust to position the underline */
+  width: 100%;
+  height: 100%;
+  background-color: var(--primary);
+  border-radius: 2px;
+  transform: scaleY(0);
+  transform-origin: left;
+  transition: transform 0.7s ease-in-out;
+  z-index: -1;
+  border-radius: 10px;
+  transform-origin: bottom;
+}
+
+.nav-item:hover::after {
+  transform: scaleY(1);
+}
+
+.active-nav-link {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.active-nav-link > .nav-link {
+  color: white !important;
+}
+
+/* Keep underline visible for the active link */
+.active-nav-link::after {
+  transform: scaleY(1);
 }

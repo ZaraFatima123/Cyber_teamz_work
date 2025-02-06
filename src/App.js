@@ -9,14 +9,15 @@ import Login from "./components/Login";
 import SecurityAwarenessCampaign from "./components/SecurityAwarenessCampaign";
 import AmIPwned from "./components/AmIPwned";
 import CyberSecurityQuiz from "./components/CyberSecurityQuiz";
-
+import { useState } from "react";
 function App() {
+  const [activeTab, setActiveTab] = useState("home");
 
   return (
     <Router>
       <div id="content-to-translate">
         <div style={styles.wrapper}>
-          <Navbar />
+          <Navbar activeTab={activeTab} setActiveTab={setActiveTab} />
           <div className="container mt-5">
             <Routes>
               <Route path="/" element={<Phishing />} />

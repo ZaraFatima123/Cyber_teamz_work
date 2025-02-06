@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
 
-const Navbar = () => {
+const Navbar = ({ activeTab, setActiveTab }) => {
   const [darkMode, setDarkMode] = useState(false);
 
   const toggleDarkMode = () => {
@@ -69,28 +69,68 @@ const Navbar = () => {
 
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <Link className="nav-link" to="/">
+            <li
+              className={`nav-item ${
+                activeTab === "home" && "active-nav-link"
+              }`}
+            >
+              <Link
+                className="nav-link"
+                to="/"
+                onClick={() => setActiveTab("home")}
+              >
                 Home
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/analytics">
+            <li
+              className={`nav-item ${
+                activeTab === "analytics" && "active-nav-link"
+              }`}
+            >
+              <Link
+                className="nav-link"
+                to="/analytics"
+                onClick={() => setActiveTab("analytics")}
+              >
                 Analytics
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/smartcheck">
+            <li
+              className={`nav-item ${
+                activeTab === "smartcheck" && "active-nav-link"
+              }`}
+            >
+              <Link
+                className="nav-link"
+                to="/smartcheck"
+                onClick={() => setActiveTab("smartcheck")}
+              >
                 Smart Check
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/security-campaign">
+            <li
+              className={`nav-item ${
+                activeTab === "security-campaign" && "active-nav-link"
+              }`}
+            >
+              <Link
+                className="nav-link"
+                to="/security-campaign"
+                onClick={() => setActiveTab("security-campaign")}
+              >
                 Security Campaign
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" to="/am-i-pawned">
+            <li
+              className={`nav-item ${
+                activeTab === "am-i-pawned" && "active-nav-link"
+              }`}
+            >
+              <Link
+                className="nav-link"
+                to="/am-i-pawned"
+                onClick={() => setActiveTab("am-i-pawned")}
+              >
                 Am I Pwned?
               </Link>
             </li>
