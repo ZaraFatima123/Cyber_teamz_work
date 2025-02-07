@@ -1,0 +1,174 @@
+/* General Styles */
+body {
+    background-color: #f5f6fa; /* Light background for consistency */
+    color: #2c3e50; /* Dark text color */
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container */
+.breach-checker-container {
+    background: linear-gradient(145deg, #ffffff, #f0f0f0); /* Gradient background */
+    color: #2c3e50; /* Dark text color */
+    border-radius: 15px; /* Rounded corners */
+    padding: 40px;
+    max-width: 800px;
+    margin: 80px auto; /* Centered with more top margin */
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Heading */
+.breach-checker-heading {
+    font-size: 2.5rem;
+    font-weight: bold; /* Bold font */
+    margin-bottom: 20px;
+    color: #2c3e50; /* Dark text color */
+    text-shadow: none; /* Remove text shadow */
+}
+
+/* Form */
+.domain-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.domain-label {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: 600; /* Semi-bold font */
+    color: #34495e; /* Slightly darker text color */
+}
+
+.domain-input {
+    padding: 12px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px;
+    font-size: 1rem;
+    border-radius: 10px; /* Rounded corners */
+    border: 2px solid #dfe6e9; /* Light border */
+    background-color: #ffffff; /* White background */
+    color: #2c3e50; /* Dark text color */
+    transition: border-color 0.3s ease;
+}
+
+.domain-input:focus {
+    border-color: #3498db; /* Blue border on focus */
+    outline: none;
+}
+
+.submit-button {
+    background-color: #3498db; /* Blue background */
+    color: #ffffff; /* White text */
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: 600; /* Semi-bold font */
+    border: none;
+    border-radius: 10px; /* Rounded corners */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: scale(1.05);
+}
+
+.submit-button:disabled {
+    background-color: #bdc3c7; /* Gray background when disabled */
+    cursor: not-allowed;
+}
+
+/* Result Message */
+.result-message {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 10px; /* Rounded corners */
+    white-space: pre-wrap;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: left;
+    animation: slideIn 0.5s ease-in-out;
+    background-color: #ffffff; /* White background */
+    border-left: 5px solid #3498db; /* Blue accent border */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-message.pwned {
+    background-color: #ffffff; /* White background */
+    border-left: 5px solid #ff9800; /* Orange accent border */
+}
+
+.result-message.safe {
+    background-color: #ffffff; /* White background */
+    border-left: 5px solid #4caf50; /* Green accent border */
+}
+
+.result-message.error {
+    background-color: #ffffff; /* White background */
+    border-left: 5px solid #e74c3c; /* Red accent border */
+}
+
+/* Breach Table */
+.breach-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.breach-table th,
+.breach-table td {
+    border: 1px solid #dfe6e9; /* Light border */
+    padding: 12px;
+    text-align: left;
+    font-size: 16px;
+    color: #2c3e50; /* Dark text color */
+}
+
+.breach-table th {
+    background-color: #f4f4f4; /* Light gray background */
+    font-weight: bold;
+    color: #2c3e50; /* Dark text color */
+}
+
+.breach-table td {
+    color: #34495e; /* Slightly darker text color */
+}
+
+.breach-table tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternate row color */
+}
+
+.breach-table tr:hover {
+    background-color: #f1f1f1; /* Hover effect */
+}
