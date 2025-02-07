@@ -10,6 +10,8 @@ import SecurityAwarenessCampaign from "./components/SecurityAwarenessCampaign";
 import AmIPwned from "./components/AmIPwned";
 import CyberSecurityQuiz from "./components/CyberSecurityQuiz";
 import { useState } from "react";
+import Forums from "./components/Forums";
+import ForumPostDetails from "./components/ForumPostDetails";
 function App() {
   const [activeTab, setActiveTab] = useState("home");
 
@@ -30,6 +32,8 @@ function App() {
               />
               <Route path="/am-i-pawned" element={<AmIPwned />} />
               <Route path="/quiz" element={<CyberSecurityQuiz />} />
+              <Route path="/forums" element={<Forums />} />
+              <Route path="/forums/:id" element={<ForumPostDetails />} />
             </Routes>
           </div>
         </div>
