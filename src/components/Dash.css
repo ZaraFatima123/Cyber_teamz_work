@@ -1,0 +1,76 @@
+/* Custom Styles */
+.dash-card {
+    border-radius: 15px;
+    background: linear-gradient(145deg, #ffffff, #f0f0f0);
+    border: none;
+  }
+  
+  .dash-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  .dash-subtitle {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+  }
+  
+  .dash-label {
+    font-weight: 600;
+    color: #34495e;
+  }
+  
+  .dash-input {
+    border-radius: 10px;
+    border: 2px solid #dfe6e9;
+    padding: 10px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .dash-input:focus {
+    border-color: #3498db;
+    box-shadow: none;
+  }
+  
+  .dash-button {
+    border-radius: 10px;
+    padding: 10px 30px;
+    font-weight: 600;
+    background-color: #3498db;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  
+  .dash-button:hover {
+    background-color: #2980b9;
+  }
+  
+  .dash-alert {
+    border-radius: 10px;
+  }
+  
+  .dash-report-card {
+    border-radius: 15px;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dash-report-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+  }
+  
+  .dash-table {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .dash-table td {
+    padding: 12px;
+  }
+  
+  .dash-table tr:hover {
+    background-color: #f8f9fa;
+  }
