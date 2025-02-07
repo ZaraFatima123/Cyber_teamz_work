@@ -67,21 +67,7 @@ const styles = {
   },
 };
 
-// const styles = {
-//   wrapper: {
-//     background: "linear-gradient(to right, #0f0c29, #302b63, #24243e)",
-//     minHeight: "100vh",
-//     color: "#9D00FF", // Neon Purple text
-//   },
-// };
 
-// const styles = {
-//   wrapper: {
-//     background: "linear-gradient(to right, #0a192f, #172a45, #233554, #2a4365)",
-//     minHeight: "100vh",
-//     color: "#00F5FF", // Electric Neon Blue text
-//   },
-// };
 
 
 
