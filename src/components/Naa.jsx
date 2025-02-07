@@ -59,6 +59,7 @@ const Naa = () => {
             <li className="nav-item"><Link className="nav-link" to="/analytics">Analytics</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/smartcheck">Smart Check</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/security-campaign">Security Campaign</Link></li>
+             <li className="nav-item"><Link className="nav-link" to="/forums">CyberSecurity Forums</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/am-i-pawned">Am I Pwned?</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/breach">Breach Checker</Link></li>
             <li className="nav-item"><Link className="nav-link" to="/spam">Am I Spammed?</Link></li>
