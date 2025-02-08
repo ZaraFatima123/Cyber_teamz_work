@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FaUserCircle } from "react-icons/fa";
+import "./Navbar.css";
 
 const Naa = () => {
   const [darkMode, setDarkMode] = useState(false);
