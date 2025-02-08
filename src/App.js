@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Nav from "./components/Nav";
-
 import Dash from "./components/Dash";
 import Analytics from "./components/Analytics";
 import SecurityAwarenessCampaign from "./components/SecurityAwarenessCampaign";
@@ -19,7 +16,7 @@ import ForumCard from "./components/ForumCard";
 import ForumPostDetails from "./components/ForumPostDetails";
 import Forums from "./components/Forums";
 import Naa from "./components/Naa";
-
+import Home from "./components/Home";
 
 function App() {
   const [activeTab, setActiveTab] = useState("home");
@@ -31,7 +28,7 @@ function App() {
           <Naa activeTab={activeTab} setActiveTab={setActiveTab} />
           <div className="container mt-5">
             <Routes>
-              <Route path="/" element={<Dash />} />
+              <Route path="/" element={<Home />} />
               <Route path="/analytics" element={<Analytics />} />
               <Route path="/smartcheck" element={<EducationalSection />} />
               {/* <Route path="/login" element={<Login />} /> */}
@@ -48,9 +45,6 @@ function App() {
               <Route path="/forumcard" element={<ForumCard />} />
               <Route path="/forumpostdetails" element={<ForumPostDetails />} />
               <Route path="/forums" element={<Forums />} />
-
-
-
             </Routes>
           </div>
         </div>
@@ -66,13 +60,5 @@ const styles = {
     color: "#fff",
   },
 };
-
-
-
-
-
-
-
-
 
 export default App;
