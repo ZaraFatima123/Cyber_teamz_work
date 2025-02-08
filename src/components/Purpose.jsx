@@ -1,15 +1,23 @@
 import React from "react";
-import { FaShieldAlt, FaLock, FaEnvelope, FaMapMarkerAlt, FaChartLine, FaPlug, FaGraduationCap, FaGlobe } from "react-icons/fa";
-import { Link } from "react-router-dom"; 
+import {
+  FaShieldAlt,
+  FaLock,
+  FaEnvelope,
+  FaMapMarkerAlt,
+  FaChartLine,
+  FaPlug,
+  FaGraduationCap,
+  FaGlobe,
+} from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Purpose() {
   return (
-    <div className="container mt-5">
+    <div className="container mt-5" id="purpose">
       <div
         className="card p-5 shadow-lg rounded-xl"
         style={{ backgroundColor: "#2b2b3a", color: "#ffffff" }}
       >
-      
         <h2
           className="mb-4 text-center"
           style={{ color: "#0dcaf0", fontSize: "2rem", fontWeight: "600" }}
@@ -30,7 +38,6 @@ function Purpose() {
         <hr className="bg-light my-4" />
 
         <div className="row text-center mt-4">
-         
           <div className="col-md-4 mb-4">
             <div className="d-flex flex-column align-items-center">
               <FaShieldAlt size={50} className="text-warning mb-3" />
@@ -42,7 +49,6 @@ function Purpose() {
             </div>
           </div>
 
-         
           <div className="col-md-4 mb-4">
             <div className="d-flex flex-column align-items-center">
               <FaEnvelope size={50} className="text-danger mb-3" />
@@ -54,7 +60,6 @@ function Purpose() {
             </div>
           </div>
 
-          
           <div className="col-md-4 mb-4">
             <div className="d-flex flex-column align-items-center">
               <FaMapMarkerAlt size={50} className="text-primary mb-3" />
@@ -68,7 +73,6 @@ function Purpose() {
         </div>
 
         <div className="row text-center mt-4">
-          
           <div className="col-md-4 mb-4">
             <div className="d-flex flex-column align-items-center">
               <FaPlug size={50} className="text-success mb-3" />
@@ -105,7 +109,6 @@ function Purpose() {
         </div>
 
         <div className="text-center mt-5">
-
           <Link to="/analytics">
             <button className="btn btn-primary btn-lg px-5 py-3 rounded-pill">
               Get Started

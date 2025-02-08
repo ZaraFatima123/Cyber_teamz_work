@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import HeaderImage from "../assets/images/header-image.svg";
+import ChatBot from "./ChatBot";
 
 function Header() {
   const textArray = [
@@ -36,7 +37,7 @@ function Header() {
     return () => clearTimeout(typingTimer);
   }, [text, charIndex, isDeleting, textIndex, textArray]);
   return (
-    <header class="d-flex justify-content-center align-items-center cyber-header">
+    <header class="d-flex justify-content-center align-items-center cyber-header relative">
       <div class="container">
         <h1 class="header-title">
           Smart Securers <br />
@@ -52,7 +53,8 @@ function Header() {
           one step ahead of cybercriminals—because awareness is your first line
           of defense.
         </p>
-        <a href="#" class="btn btn-outline-light header-btn">
+        <ChatBot />
+        <a href="#purpose" class="btn btn-outline-light header-btn">
           Learn More
         </a>
       </div>
