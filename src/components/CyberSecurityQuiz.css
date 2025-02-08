@@ -1,0 +1,139 @@
+/* General Styling */
+.quiz-card {
+  background: #ffffff; /* Pure white background */
+  color: #333; /* Dark charcoal gray text for readability */
+  border-radius: 16px;
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 40px;
+  transform: scale(1);
+  transition: all 0.3s ease;
+}
+
+.quiz-card:hover {
+  transform: scale(1.02);
+}
+
+.question-text {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+  color: #2c3e50; /* Slightly darker text for questions */
+}
+
+.score-heading {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #27ae60; /* Soft green for the score */
+}
+
+.score-message {
+  font-size: 1.3rem;
+  color: #3498db; /* Soft blue for message */
+  margin-bottom: 25px;
+}
+
+.option-btn {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 16px;
+  border-radius: 10px;
+  margin-top: 15px;
+  background-color: #ffffff; /* White background for better contrast */
+  border: 2px solid #3498db; /* Blue border */
+  color: #2c3e50; /* Dark gray text */
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.option-btn:hover {
+  background-color: #3498db; /* Blue background on hover */
+  color: #ffffff; /* White text on hover */
+}
+
+.correct, .incorrect {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.4rem;
+}
+
+/* Button states */
+.correct {
+  color: transparent; /* Remove color */
+}
+
+.incorrect {
+  color: transparent; /* Remove color */
+}
+
+/* Restart and Next Button Styling */
+.restart-btn,
+.next-btn {
+  font-size: 1.1rem;
+  padding: 14px 28px;
+  font-weight: bold;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.restart-btn {
+  background-color: #ff7675; /* Soft coral for restart button */
+  border: none;
+}
+
+.restart-btn:hover {
+  background-color: #ff4d4f; /* Darker coral on hover */
+}
+
+.next-btn {
+  background-color: #1abc9c; /* Teal green for next button */
+  border: none;
+}
+
+.next-btn:hover {
+  background-color: #16a085; /* Darker teal on hover */
+}
+
+/* Progress Bar */
+.progress {
+  height: 12px;
+  background-color: #e0e0e0; /* Light gray background for progress bar */
+  border-radius: 6px;
+}
+
+.progress-bar {
+  background-color: #3498db; /* Blue for progress bar */
+  border-radius: 6px;
+}
+
+/* Add subtle animation for the entire quiz card */
+@keyframes cardZoom {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.quiz-card {
+  animation: cardZoom 0.6s ease-out;
+}
+
+/* Responsive Styling */
+@media (max-width: 576px) {
+  .quiz-card {
+    padding: 2rem;
+  }
+  .question-text {
+    font-size: 1.3rem;
+  }
+  .option-btn {
+    font-size: 1rem;
+  }
+}
