@@ -1,16 +1,15 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import Replies from "./Replies";
 
 function ForumCard({ forum }) {
+  const [showModal, setShowModal] = useState(false);
+
   return (
-    <Link
-      to={`/forums/${forum.id}`}
-      state={forum}
-      style={{ textDecoration: "none" }}
-    >
+    <>
       <div
-        key={forum.id}
+        onClick={() => setShowModal(true)}
         className="list-group-item list-group-item-dark mb-3 rounded"
+        style={{ cursor: "pointer" }}
       >
         <h5 className="mb-1">{forum.title}</h5>
         <p className="mb-1">
@@ -18,10 +17,17 @@ function ForumCard({ forum }) {
           <span className="badge bg-info">{forum.category}</span>
         </p>
         <small className="text-muted">
-          {forum.replies} replies | {forum.views} views
+          {forum.replies.length} replies | {forum.views} views
         </small>
       </div>
-    </Link>
+
+      {/* Replies Modal */}
+      <Replies
+        forum={forum}
+        show={showModal}
+        onHide={() => setShowModal(false)}
+      />
+    </>
   );
 }
 
