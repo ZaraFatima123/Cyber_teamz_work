@@ -12,7 +12,7 @@ function NewsCarousel() {
         method: "GET",
         headers: {
           "x-rapidapi-key":
-            "f9d1fb53b2msh02c60a5a4d4d75cp1cadf2jsnc96bd3534d93",
+            "",
           "x-rapidapi-host": "real-time-news-data.p.rapidapi.com",
         },
       };
