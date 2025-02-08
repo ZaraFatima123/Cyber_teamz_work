@@ -1,76 +1,180 @@
-/* Custom Styles */
+/* Base Styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  color: #2c3e50;
+}
+
+/* Card Styling */
 .dash-card {
-    border-radius: 15px;
-    background: linear-gradient(145deg, #ffffff, #f0f0f0);
-    border: none;
-  }
-  
+  border-radius: 20px;
+  background: linear-gradient(145deg, #ffffff, #e0e6ef);
+  border: none;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  transition: all 0.3s ease;
+}
+
+.dash-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* Header Styling */
+.dash-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #1a2a3a;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+}
+
+.dash-subtitle {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+/* Form Styling */
+.dash-label {
+  font-weight: 600;
+  color: #34495e;
+  font-size: 1.1rem;
+}
+
+.dash-input {
+  border-radius: 12px;
+  border: 2px solid #dfe6e9;
+  padding: 12px 20px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.dash-input:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+}
+
+/* Button Styling */
+.dash-button {
+  border-radius: 12px;
+  padding: 12px 35px;
+  font-weight: 600;
+  background-color: #3498db;
+  border: none;
+  color: white;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-size: 1.1rem;
+}
+
+.dash-button:hover {
+  background-color: #2980b9;
+  transform: scale(1.05);
+}
+
+.dash-button:disabled {
+  background-color: #7f8c8d;
+  cursor: not-allowed;
+}
+
+/* Alerts */
+.dash-alert {
+  border-radius: 12px;
+  margin-top: 20px;
+  padding: 15px;
+  font-size: 1.1rem;
+}
+
+/* Report Section */
+.dash-report-card {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dash-report-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #1a2a3a;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.metric-card {
+  background-color: #ecf0f1;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+  background-color: #dfe6e9;
+  transform: translateY(-5px);
+}
+
+.metric-card h5 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #7f8c8d;
+}
+
+.metric-card h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+/* Progress Bar Styling */
+.progress-bar-custom {
+  height: 20px;
+  border-radius: 10px;
+}
+
+.progress-bar-custom .progress-bar {
+  transition: width 0.5s ease-in-out;
+}
+
+.dash-table {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.dash-table td {
+  padding: 15px;
+}
+
+.dash-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+/* Spinner Styling */
+.spinner-border {
+  color: #3498db;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
   .dash-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #2c3e50;
+    font-size: 2.2rem;
   }
-  
+
   .dash-subtitle {
-    font-size: 1.1rem;
-    color: #7f8c8d;
+    font-size: 1rem;
   }
-  
-  .dash-label {
-    font-weight: 600;
-    color: #34495e;
-  }
-  
-  .dash-input {
-    border-radius: 10px;
-    border: 2px solid #dfe6e9;
-    padding: 10px;
-    transition: border-color 0.3s ease;
-  }
-  
-  .dash-input:focus {
-    border-color: #3498db;
-    box-shadow: none;
-  }
-  
+
   .dash-button {
-    border-radius: 10px;
-    padding: 10px 30px;
-    font-weight: 600;
-    background-color: #3498db;
-    border: none;
-    transition: background-color 0.3s ease;
+    font-size: 1rem;
+    padding: 10px 25px;
   }
-  
-  .dash-button:hover {
-    background-color: #2980b9;
+
+  .metric-card {
+    margin-bottom: 20px;
   }
-  
-  .dash-alert {
-    border-radius: 10px;
-  }
-  
-  .dash-report-card {
-    border-radius: 15px;
-    background: #ffffff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .dash-report-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #2c3e50;
-  }
-  
-  .dash-table {
-    border-radius: 10px;
-    overflow: hidden;
-  }
-  
-  .dash-table td {
-    padding: 12px;
-  }
-  
-  .dash-table tr:hover {
-    background-color: #f8f9fa;
-  }
+}

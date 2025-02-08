@@ -4,6 +4,7 @@ import { Container, Form, Button, Card, Spinner, Alert, ProgressBar } from "reac
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./Dash.css";
 
+
 const Dash = () => {
   const [url, setUrl] = useState("");
   const [report, setReport] = useState(null);
@@ -46,94 +47,113 @@ const Dash = () => {
   };
 
   return (
-    <Container className="mt-5 pt-4">
-      <Card className="shadow-lg p-4 dash-card">
-        <h2 className="text-center mb-4 dash-title">🔍 Smart URL Scanner</h2>
-        <p className="text-center mb-4 dash-subtitle">Analyze URLs for threats in real-time.</p>
+    <>
+    
+      <Container className="mt-5 pt-4">
+        <Card className="shadow-lg p-4 dash-card">
+          <h2 className="text-center mb-4 dash-title">🔍 Smart URL Scanner</h2>
+          <p className="text-center mb-4 dash-subtitle">
+            Analyze URLs for threats in real-time.
+          </p>
 
-        <Form>
-          <Form.Group className="mb-4">
-            <Form.Label className="dash-label">Enter URL</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="https://example.com"
-              value={url}
-              onChange={(e) => setUrl(e.target.value)}
-              className="dash-input"
-            />
-          </Form.Group>
+          <Form>
+            <Form.Group className="mb-4">
+              <Form.Label className="dash-label">Enter URL</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="https://example.com"
+                value={url}
+                onChange={(e) => setUrl(e.target.value)}
+                className="dash-input"
+              />
+            </Form.Group>
 
-          <div className="text-center">
-            <Button variant="primary" onClick={handleScanUrl} disabled={loading} className="dash-button">
-              {loading ? <><Spinner animation="border" size="sm" className="me-2" />Scanning...</> : "Scan URL"}
-            </Button>
-          </div>
-        </Form>
-
-        {error && (
-          <Alert variant="danger" className="mt-4 dash-alert">
-            ⚠️ {error}
-          </Alert>
-        )}
-
-        {report && report.data.attributes.stats && (
-          <Card className="mt-4 p-3 dash-report-card">
-            <h4 className="dash-report-title text-center">🔎 URL Analysis Report</h4>
-
-            {/* Key Metrics in Cards */}
-            <div className="d-flex justify-content-around mt-3 flex-wrap">
-              <Card className="metric-card shadow-sm p-3 text-center mb-3">
-                <h5 className="text-danger">Malicious</h5>
-                <h3>{report.data.attributes.stats.malicious ?? "0"}</h3>
-              </Card>
-              <Card className="metric-card shadow-sm p-3 text-center mb-3">
-                <h5 className="text-success">Harmless</h5>
-                <h3>{report.data.attributes.stats.harmless ?? "0"}</h3>
-              </Card>
-              <Card className="metric-card shadow-sm p-3 text-center mb-3">
-                <h5 className="text-warning">Suspicious</h5>
-                <h3>{report.data.attributes.stats.suspicious ?? "0"}</h3>
-              </Card>
+            <div className="text-center">
+              <Button
+                variant="primary"
+                onClick={handleScanUrl}
+                disabled={loading}
+                className="dash-button"
+              >
+                {loading ? (
+                  <>
+                    <Spinner animation="border" size="sm" className="me-2" />
+                    Scanning...
+                  </>
+                ) : (
+                  "Scan URL"
+                )}
+              </Button>
             </div>
+          </Form>
 
-            {/* Progress Bars for Visual Representation */}
-            <div className="mt-4">
-              <h5>🛡️ Threat Breakdown</h5>
+          {error && (
+            <Alert variant="danger" className="mt-4 dash-alert">
+              ⚠️ {error}
+            </Alert>
+          )}
 
-              <div className="mb-3">
-                <strong className="text-danger">Malicious</strong>
-                <ProgressBar
-                  variant="danger"
-                  now={report.data.attributes.stats.malicious * 10}
-                  animated
-                  className="progress-bar-custom"
-                />
+          {report && report.data.attributes.stats && (
+            <Card className="mt-4 p-3 dash-report-card">
+              <h4 className="dash-report-title text-center">
+                🔎 URL Analysis Report
+              </h4>
+
+              {/* Key Metrics in Cards */}
+              <div className="d-flex justify-content-around mt-3 flex-wrap">
+                <Card className="metric-card shadow-sm p-3 text-center mb-3">
+                  <h5 className="text-danger">Malicious</h5>
+                  <h3>{report.data.attributes.stats.malicious ?? "0"}</h3>
+                </Card>
+                <Card className="metric-card shadow-sm p-3 text-center mb-3">
+                  <h5 className="text-success">Harmless</h5>
+                  <h3>{report.data.attributes.stats.harmless ?? "0"}</h3>
+                </Card>
+                <Card className="metric-card shadow-sm p-3 text-center mb-3">
+                  <h5 className="text-warning">Suspicious</h5>
+                  <h3>{report.data.attributes.stats.suspicious ?? "0"}</h3>
+                </Card>
               </div>
 
-              <div className="mb-3">
-                <strong className="text-success">Harmless</strong>
-                <ProgressBar
-                  variant="success"
-                  now={report.data.attributes.stats.harmless * 10}
-                  animated
-                  className="progress-bar-custom"
-                />
-              </div>
+              {/* Progress Bars for Visual Representation */}
+              <div className="mt-4">
+                <h5>🛡️ Threat Breakdown</h5>
 
-              <div className="mb-3">
-                <strong className="text-warning">Suspicious</strong>
-                <ProgressBar
-                  variant="warning"
-                  now={report.data.attributes.stats.suspicious * 10}
-                  animated
-                  className="progress-bar-custom"
-                />
+                <div className="mb-3">
+                  <strong className="text-danger">Malicious</strong>
+                  <ProgressBar
+                    variant="danger"
+                    now={report.data.attributes.stats.malicious * 10}
+                    animated
+                    className="progress-bar-custom"
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <strong className="text-success">Harmless</strong>
+                  <ProgressBar
+                    variant="success"
+                    now={report.data.attributes.stats.harmless * 10}
+                    animated
+                    className="progress-bar-custom"
+                  />
+                </div>
+
+                <div className="mb-3">
+                  <strong className="text-warning">Suspicious</strong>
+                  <ProgressBar
+                    variant="warning"
+                    now={report.data.attributes.stats.suspicious * 10}
+                    animated
+                    className="progress-bar-custom"
+                  />
+                </div>
               </div>
-            </div>
-          </Card>
-        )}
-      </Card>
-    </Container>
+            </Card>
+          )}
+        </Card>
+      </Container>
+    </>
   );
 };
 
