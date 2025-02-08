@@ -36,26 +36,27 @@ function NewsCarousel() {
           autoplay: true,
         }}
       >
-        {news.map((newsItem) => (
-          <SplideSlide>
-            <div
-              className="news-card p-5 m-4"
-              style={{ backgroundImage: `url(${newsItem.photo_url})` }}
-            >
-              <div className="d-flex justify-content-center align-items-center flex-column news-card-content">
-                <h4 className="news-title">{newsItem.title}</h4>
-                <a
-                  href={newsItem.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="news-button"
-                >
-                  Full Story <IoIosArrowDropright size={25} />
-                </a>
+        {news &&
+          news.map((newsItem) => (
+            <SplideSlide>
+              <div
+                className="news-card p-5 m-4"
+                style={{ backgroundImage: `url(${newsItem.photo_url})` }}
+              >
+                <div className="d-flex justify-content-center align-items-center flex-column news-card-content">
+                  <h4 className="news-title">{newsItem.title}</h4>
+                  <a
+                    href={newsItem.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="news-button"
+                  >
+                    Full Story <IoIosArrowDropright size={25} />
+                  </a>
+                </div>
               </div>
-            </div>
-          </SplideSlide>
-        ))}
+            </SplideSlide>
+          ))}
       </Splide>
     </div>
   );
