@@ -57,7 +57,7 @@ Join community forums, report phishing attempts, and participate in ongoing cybe
 
 ## Screenrecording
 
-[Demo Video](https://github.com/ZaraFatima123/Cyber_teamz_work/blob/main/latesttt_video.mp4)
+[Demo Video](https://github.com/ZaraFatima123/Cyber_teamz_work/blob/main/latesttt_video.mp4) , please click on View raw, your video will get downloaded.
 
 ## 🔖 Badge Reference  
 
