@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# Smart Securers 🚀🔒
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+Smart Securers is a user-friendly platform built to empower individuals and organizations with the tools they need to stay safe in the digital world. Whether you're browsing the web, checking email, or managing sensitive information, Smart Securers provides real-time detection of phishing attacks and malicious websites, protecting your online presence.This project is a forum-style web application built with React, Bootstrap, and modern web technologies.
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+✅ Phishing URL Checker: Instantly verifies whether a URL is      phishing, benign, or defaced using a dataset-backed detection system.
 
-### `npm run build`
+📊 Analytics Dashboard: Displays URL threat statistics with interactive bar charts, pie charts, and line graphs. Users can also download datasets for further analysis.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+📧 Spam Email Detector: Identifies and flags potentially dangerous or fraudulent emails.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+📚 Educational Section: Provides cybersecurity awareness materials, tips, and best practices to help users stay safe online.
 
-### `npm run eject`
+🌍 Security Campaigns & Forums: A platform for users to discuss online threats, share experiences, and participate in security awareness initiatives.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+With Smart Securers, you can take control of your online security and stay protected from cyber threats! 🔒🌐
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Usage Guide 
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+1️⃣ URL Phishing Detection
+Go to the URL Checker tab, enter a URL, and click Analyze to check if it's phishing (🔴), safe (🟢), or defaced (🟡).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2️⃣ Phishing Analytics
+Access the Analytics tab for a comprehensive view of phishing trends. Explore interactive charts displaying detected threats and risk patterns.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+3️⃣ Email Breach Check
+Use the Am I Spammed? feature to check if your email has been part of any data breaches.
 
-### Code Splitting
+4️⃣ Community Engagement
+Join community forums, report phishing attempts, and participate in ongoing cybersecurity awareness campaigns.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Download Extension
 
-### Analyzing the Bundle Size
+**1.** Head over to ourgithub link:- https://github.com/ZaraFatima123/Cyber_teamz_work/.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+**2.** Download the extension folder, which contains the manifest.json file.
 
-### Making a Progressive Web App
+**3.** In Chrome, go to chrome://extensions/ > Manage Extensions.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+**4.** Turn on Developer Mode and click Load Unpacked.
 
-### Advanced Configuration
+**5.** Select the folder containing manifest.json.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+**6.** You're all set to go!
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `npm run build` fails to minify
+## Screenshots
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+## 🔖 Badge Reference  
+
+| Badge | Meaning                             |
+|-------|-------------------------------------|
+| 🟢 **Benign**     | Safe website (No threat detected)   |
+| 🔴 **Phishing**   | Malicious website (Phishing attempt) |
+| 🟡 **Defacement**  | Website altered (Content modified)   |
+| 🔔 **New Alert**   | A new notification or security warning |
+
+
+## Acknowledgements
+
+- **APIs Used**:-
+
+   **1**) You can get the Real-Time News API from [RapidAPI](https://rapidapi.com/letscrape-6bRBa3QguO5/api/real-time-news-data).
+
+   **2**) You can get the VirusTotal URL Checker API from [RapidAPI](https://rapidapi.com/dimas/api/VirusTotal).
+
+   **3**) You can get the VITE_API_KEY from [Gemini API](https://ai.google.dev/gemini-api).
+
+   **4**) You can get the Spam Email Checker API from [RapidAPI](https://rapidapi.com/consultwithshiv-consultwithshiv-default/api/spam-email-checker)
+
+## Technologies Used
+
+**Frontend:** React, React-Bootstrap, React Icons
+
+**Routing:** React Router DOM
+
+**State Management:** React Hooks (useState, useRef)
+
+**Styling:** Bootstrap, CSS
+
+**Version Control:** Git and GitHub
+
+
+
+
