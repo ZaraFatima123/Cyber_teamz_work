@@ -1,5 +1,13 @@
 # Smart Securers 🚀🔒
 
+## Demo Video
+
+
+
+https://github.com/user-attachments/assets/287837a7-8970-4b96-93f0-befb2c083317
+
+
+
 ## Introduction
 
 Smart Securers is a user-friendly platform built to empower individuals and organizations with the tools they need to stay safe in the digital world. Whether you're browsing the web, checking email, or managing sensitive information, Smart Securers provides real-time detection of phishing attacks and malicious websites, protecting your online presence.This project is a forum-style web application built with React, Bootstrap, and modern web technologies.
