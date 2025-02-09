@@ -61,12 +61,6 @@ Join community forums, report phishing attempts, and participate in ongoing cybe
 
 **6.** You're all set to go!
 
-
-
-## Screenrecording
-
-[Demo Video](https://github.com/ZaraFatima123/Cyber_teamz_work/blob/main/latesttt_video.mp4) , please click on View raw, your video will get downloaded.
-
 ## 🔖 Badge Reference  
 
 | Badge | Meaning                             |
